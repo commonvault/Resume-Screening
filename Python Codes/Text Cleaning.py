@@ -1,8 +1,16 @@
-# Convert all strings to lowercase
-text = text.lower()
+''' Step 2: clean text, remove non-alphabets and punctuations '''
+import string
+import re
 
-# Remove numbers
-text = re.sub(r'\d+','',text)
+# Convert all strings to lowercase
+text = str(text.lower())
+
+# Remove tags and non-alphabets
+text = text.replace('\n', ' ')
+text = text.replace('\\n', ' ')
 
 # Remove punctuation
 text = text.translate(str.maketrans('','',string.punctuation))
+
+# Remove extra spaces
+text = re.sub(' +', ' ', text)

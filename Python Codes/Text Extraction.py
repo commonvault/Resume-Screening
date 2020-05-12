@@ -1,29 +1,28 @@
-# Import required libraries
-import PyPDF2
+''' Step 1: extract text from pdf resume '''
 import textract
-import re
-import string
-import pandas as pd
-import matplotlib.pyplot as plt
-%matplotlib inline
+text = textract.process('../Files/ornwipa_resume.pdf', encoding='ascii')
 
-# Open pdf file
-pdfFileObj = open('Roberto Salazar - Resume.pdf','rb')
+''' Below is the original code by the author '''
+# # Import required package
+# import PyPDF2
 
-# Read file
-pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+# # Open pdf file
+# pdfFileObj = open('Roberto Salazar - Resume.pdf','rb') 
 
-# Get total number of pages
-num_pages = pdfReader.numPages
+# # Read file
+# pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
 
-# Initialize a count for the number of pages
-count = 0
+# # Get total number of pages
+# num_pages = pdfReader.numPages
 
-# Initialize a text empty etring variable
-text = ""
+# # Initialize a count for the number of pages
+# count = 0
 
-# Extract text from every page on the file
-while count < num_pages:
-    pageObj = pdfReader.getPage(count)
-    count +=1
-    text += pageObj.extractText()
+# # Initialize a text empty etring variable
+# text = ""
+
+# # Extract text from every page on the file
+# while count < num_pages:
+#     pageObj = pdfReader.getPage(count)
+#     count +=1
+#     text += pageObj.extractText()
